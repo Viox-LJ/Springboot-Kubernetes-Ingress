@@ -1,0 +1,18 @@
+FROM my-centos-java
+
+MAINTAINER Santiago Rollheiser <san.rollheiser@gmail.com>
+
+# Define the Volume.
+VOLUME /tmp
+
+# Copy the Spring Boot App
+COPY spring-boot-sample-hateoas-2.1.0.BUILD-SNAPSHOT.jar /tmp
+
+# Define working directory.
+WORKDIR /tmp
+
+# Define the Expose port.
+EXPOSE 9000
+
+# Define default command.
+CMD ["java", "-jar", "-Dserver.port=9000" ,"spring-boot-sample-hateoas-2.1.0.BUILD-SNAPSHOT.jar"]

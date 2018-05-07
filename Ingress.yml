@@ -1,0 +1,13 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: springboot-ingress-gateway
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+spec:
+  tls:
+  - secretName: examen-tls
+  backend:
+    serviceName: spring-boot-service
+    servicePort: 9000

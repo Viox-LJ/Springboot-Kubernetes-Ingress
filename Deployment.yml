@@ -1,0 +1,17 @@
+---
+ apiVersion: extensions/v1beta1
+ kind: Deployment
+ metadata:
+   name: springboot-app-examen
+ spec:
+   replicas: 2
+   template:
+     metadata:
+       labels:
+         app: springboot-app-examen
+     spec:
+       containers:
+         - name: springboot-app-examen
+           image: viox/springboot-app-demo
+           ports:
+             - containerPort: 9000
